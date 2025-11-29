@@ -14,16 +14,38 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
+import ScrollToTopButton from './components/ScrollToTopButton'
 import './App.css'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isMinTimeDone, setIsMinTimeDone] = useState(false)
+  const [isAppReady, setIsAppReady] = useState(false)
 
   useEffect(() => {
-    // Show loader for 3 seconds on initial load
-    const timeout = setTimeout(() => setIsLoading(false), 3000)
+    // Ensure loader is shown for at least 3 seconds
+    const timeout = setTimeout(() => setIsMinTimeDone(true), 3000)
     return () => clearTimeout(timeout)
   }, [])
+
+  useEffect(() => {
+    // Mark app as ready when the window 'load' event fires
+    const handleLoad = () => {
+      setIsAppReady(true)
+    }
+
+    if (document.readyState === 'complete') {
+      // If already loaded, mark as ready immediately
+      handleLoad()
+    } else {
+      window.addEventListener('load', handleLoad)
+    }
+
+    return () => {
+      window.removeEventListener('load', handleLoad)
+    }
+  }, [])
+
+  const isLoading = !(isMinTimeDone && isAppReady)
 
   return (
     <div className="min-h-screen bg-white relative">
@@ -45,6 +67,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   )
 }

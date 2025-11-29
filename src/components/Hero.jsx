@@ -1,6 +1,13 @@
 import oceanVideo from '../assets/Ocean Waves.webm'
 
 const Hero = () => {
+  const scrollToSection = (id) => {
+    const target = document.getElementById(id)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section
       id="home"
@@ -35,10 +42,18 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <button className="w-full sm:w-auto bg-blue-800 hover:bg-blue-900 text-white font-sans font-medium px-8 py-3 lg:px-10 lg:py-4 rounded-lg transition-colors duration-200 text-sm sm:text-base">
+          <button
+            type="button"
+            onClick={() => scrollToSection('contact')}
+            className="w-full sm:w-auto bg-blue-800 hover:bg-blue-900 text-white font-sans font-medium px-8 py-3 lg:px-10 lg:py-4 rounded-lg transition-colors duration-200 text-sm sm:text-base"
+          >
             BOOK A CONSULTATION
           </button>
-          <button className="w-full sm:w-auto bg-blue-800 hover:bg-blue-900 text-white font-sans font-medium px-8 py-3 lg:px-10 lg:py-4 rounded-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2">
+          <button
+            type="button"
+            onClick={() => scrollToSection('services')}
+            className="w-full sm:w-auto bg-blue-800 hover:bg-blue-900 text-white font-sans font-medium px-8 py-3 lg:px-10 lg:py-4 rounded-lg transition-colors duration-200 text-sm sm:text-base flex items-center justify-center gap-2"
+          >
             PARTNER WITH US
             <svg
               className="w-5 h-5"
