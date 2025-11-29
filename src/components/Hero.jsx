@@ -1,8 +1,11 @@
-import oceanVideo from '../assets/Ocean waves.mp4'
+import oceanVideo from '../assets/Ocean Waves.webm'
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -12,7 +15,7 @@ const Hero = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src={oceanVideo} type="video/mp4" />
+          <source src={oceanVideo} type="video/webm" />
         </video>
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-teal-900/40"></div>

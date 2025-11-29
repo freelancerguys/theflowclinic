@@ -21,7 +21,11 @@ const Contact = () => {
   }
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24" style={{ backgroundColor: '#F4F6F7' }}>
+    <section
+      id="contact"
+      className="w-full py-16 sm:py-20 lg:py-24"
+      style={{ backgroundColor: '#F4F6F7' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Container with border */}
         <div className="rounded-2xl border-2 border-blue-900 p-6 lg:p-8 xl:p-12" style={{ backgroundColor: '#F4F6F7' }}>

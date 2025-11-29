@@ -70,7 +70,10 @@ const WhatWeOffer = () => {
   }
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-white">
+    <section
+      id="services"
+      className="w-full py-16 sm:py-20 lg:py-24 bg-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-900 text-center mb-4">

@@ -45,7 +45,11 @@ const WhyUs = () => {
   ]
 
   return (
-    <section className="w-full pt-20 sm:pt-16 md:pt-20 lg:pt-24 pb-16 sm:pb-20 md:pb-24 lg:pb-32" style={{ backgroundColor: '#DFF6F9' }}>
+    <section
+      id="about"
+      className="w-full pt-20 sm:pt-16 md:pt-20 lg:pt-24 pb-16 sm:pb-20 md:pb-24 lg:pb-32 scroll-mt-24 md:scroll-mt-28 lg:scroll-mt-32"
+      style={{ backgroundColor: '#DFF6F9' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Section - Text Content */}
@@ -64,15 +68,18 @@ const WhyUs = () => {
             {/* Bulleted List */}
             <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3 sm:gap-4">
+                <div
+                  key={index}
+                  className="flex items-start gap-3 sm:gap-4"
+                >
                   {/* Icon Circle */}
-                  <div className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-teal-600 flex items-center justify-center text-white mt-0.5 sm:mt-1">
-                    <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+                  <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 md:w-12 md:h-12 rounded-full bg-teal-600 flex items-center justify-center text-white mt-0.5 sm:mt-0 md:mt-1">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-6 md:h-6">
                       {feature.icon}
                     </div>
                   </div>
                   {/* Text */}
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-900 leading-relaxed pt-1 sm:pt-2">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-900 leading-relaxed pt-0.5 sm:pt-0 md:pt-1">
                     {feature.text}
                   </p>
                 </div>

@@ -54,16 +54,19 @@ const WaveAnimation = () => {
     const animateBoat = (element) => {
       if (!element) return
       
-      // Main horizontal movement from right to left
+      // Main horizontal movement from just outside the right edge to just outside the left edge
+      // so that the reset of the loop happens fully off‑screen and looks seamless.
       const horizontalKeyframes = [
-        { transform: 'translateX(100vw)' },
-        { transform: 'translateX(-100px)' }
+        { transform: 'translateX(120vw)' },
+        { transform: 'translateX(-120vw)' }
       ]
       
       const horizontalOptions = {
-        duration: 25000, // 25 seconds for slow, smooth movement
+        // Increase duration for slower, smoother movement
+        duration: 45000, // 45 seconds
         iterations: Infinity,
-        easing: 'cubic-bezier(0.4, 0, 0.2, 1)' // Smooth ease-in-out
+        // Linear keeps the motion constant and very smooth across the screen
+        easing: 'linear'
       }
       
       // Apply horizontal animation to the wrapper div
@@ -110,7 +113,8 @@ const WaveAnimation = () => {
             className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
             style={{ 
               filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1))',
-              animation: 'boatWiggle 2s ease-in-out infinite'
+              // Slower, gentler bobbing
+              animation: 'boatWiggle 4s ease-in-out infinite'
             }}
             onError={(e) => {
               console.error('Boat image failed to load')
